@@ -1,5 +1,7 @@
 package InputOutput;
 
+import java.util.Scanner;
+
 /**
  * Input-output:
  * - реализовать файловый менеджер (в виде консольного приложения).
@@ -13,11 +15,43 @@ package InputOutput;
  */
 
 public class Main {
-    public static void main(String[] args) {
-        CreateFile createFile = new CreateFile();
-        createFile.addFile("MyFile.txt");
+    private static final Scanner in = new Scanner(System.in);
 
-//        DeleteFile deleteFile = new DeleteFile();
-//        deleteFile.removeFile("MyFile.txt");
+    public static void main(String[] args) {
+
+        while (true) {
+            System.out.println("Введите команду:");
+            System.out.println("create");
+            System.out.println("delete");
+            System.out.println("write");
+            System.out.println("read");
+            System.out.println("Или введите close для завершения");
+            System.out.println("--------------------------------");
+
+            String action = in.nextLine();
+
+            switch (action) {
+                case "create":
+                    CreateFile createFile = new CreateFile();
+                    createFile.addFile("MyFile.txt");
+                    break;
+                case "delete":
+                    DeleteFile deleteFile = new DeleteFile();
+                    deleteFile.removeFile("MyFile.txt");
+                    break;
+                case "write":
+                    SimpleWrite sw = new SimpleWrite();
+                    sw.fileWrite("MyFile.txt");
+                    break;
+                case "read":
+                    SimpleRead sr = new SimpleRead();
+                    sr.fileRead("MyFile.txt");
+                    break;
+                case "close":
+                    return;
+                default:
+                    System.out.println("Invalid action");
+            }
+        }
     }
 }

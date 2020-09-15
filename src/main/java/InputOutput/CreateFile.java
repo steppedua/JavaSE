@@ -8,7 +8,7 @@ public class CreateFile {
     public void addFile(String fileName) {
 
         try {
-            File file = new File("C:\\Users\\stepa\\OneDrive\\Рабочий стол\\SE\\src\\main\\java\\InputOutput\\" + fileName);
+            File file = new File("C:\\Users\\stepa\\IdeaProjects\\JavaSE\\src\\main\\java\\InputOutput\\" + fileName);
 
             if (file.createNewFile()) {
                 System.out.println("Файл " + fileName + " был создан в корневой папке проекта");
