@@ -1,6 +1,5 @@
 package Collections.Set;
 
-import Collections.List.Methods.Methods;
 import Collections.Set.Methods.MethodsSet;
 
 import java.util.Set;

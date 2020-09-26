@@ -24,11 +24,9 @@ public class MyDAO implements FatherDAO<Customers> {
             preparedStatement.setString(4, customers.getEmail());
             preparedStatement.setInt(5, customers.getAge());
 
-            int i = preparedStatement.executeUpdate();
+            preparedStatement.executeUpdate();
 
-            if (i == 1) {
-                return true;
-            }
+            return true;
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -64,11 +62,9 @@ public class MyDAO implements FatherDAO<Customers> {
             preparedStatement.setInt(1, customers.getAge());
             preparedStatement.setInt(2, customers.getId());
 
-            int i = preparedStatement.executeUpdate();
+            preparedStatement.executeUpdate();
 
-            if (i == 1) {
-                return true;
-            }
+            return true;
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -84,16 +80,14 @@ public class MyDAO implements FatherDAO<Customers> {
             Connection connection = DriverManager.getConnection(DB_URL, USER, PASSWORD);
             Statement statement = connection.createStatement();
 
-            int i = statement.executeUpdate("DELETE FROM customers WHERE id=" + customers.getId());
+            statement.executeUpdate("DELETE FROM customers WHERE id=" + customers.getId());
 
-            if (i == 1) {
-                return true;
-            }
+            return true;
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
+
         return false;
     }
 

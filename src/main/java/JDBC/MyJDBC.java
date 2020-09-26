@@ -30,6 +30,7 @@ CREATE TABLE customers
             (4, 'Ballu', 'Horse', 'ballu@mail.ru', 23),
             (5, 'Kotlin', 'Jvm', 'kotlin-jvm@list.ua', 54);
 */
+
 public class MyJDBC {
     public static void main(String[] args) throws ClassNotFoundException {
 
@@ -45,17 +46,17 @@ public class MyJDBC {
 
         System.out.println("------------------------");
 
-//        Customers customers1 = new Customers(6, "Vasya", "Petrov", "vasya-petrov@gmail.com", 50);
-//        myDAO.insert(customers1);
-//
-//        System.out.println("insert - OK");
-//        System.out.println("------------------------");
-//
-//        Customers customers2 = new Customers(6,54);
-//        myDAO.update(customers2);
-//
-//        System.out.println("update - OK");
-//        System.out.println("------------------------");
+        Customers customers1 = new Customers(6, "Vasya", "Petrov", "vasya-petrov@gmail.com", 50);
+        myDAO.insert(customers1);
+
+        System.out.println("insert - OK");
+        System.out.println("------------------------");
+
+        Customers customers2 = new Customers(6,54);
+        myDAO.update(customers2);
+
+        System.out.println("update - OK");
+        System.out.println("------------------------");
 
         Customers customers3 = new Customers(6, "SCALA", "Jvm", "scala-jvm@list.ua", 50);
         myDAO.delete(customers3);
