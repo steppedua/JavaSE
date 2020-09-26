@@ -1,8 +1,6 @@
 package Hibernate;
 
-import Hibernate.Model.Customers;
-import Hibernate.Util.HibernateUtil;
-import org.hibernate.Session;
+import Hibernate.DAO.SimpleHibernateDAO;
 
 /**
  * Hibernate:
@@ -15,14 +13,10 @@ import org.hibernate.Session;
 
 public class MyHibernate {
     public static void main(String[] args) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
+        SimpleHibernateDAO simpleHibernateDAO = new SimpleHibernateDAO();
 
-        Customers customers = new Customers(7, "Petro", "Vetro", "petro-vetro@gmail.com", 55);
+        simpleHibernateDAO.getById(5);
 
-        session.save(customers);
-
-        session.getTransaction().commit();
-        HibernateUtil.shutdown();
+        simpleHibernateDAO.closeSessionFactory();
     }
 }

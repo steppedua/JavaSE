@@ -27,4 +27,8 @@ public class Customers {
         this.email = email;
         this.age = age;
     }
+
+    public Customers(Integer id) {
+        this.id = id;
+    }
 }

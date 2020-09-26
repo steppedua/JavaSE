@@ -6,23 +6,18 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
 
-    private static final SessionFactory sessionFactory = buildSessionFactory();
+    private static SessionFactory sessionFactory;
 
     //Возвращает sessionFactory, необходимую для создания сессии
-    private static SessionFactory buildSessionFactory() {
+    public static SessionFactory getSessionFactory() {
+
         try {
             return new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
-        } catch (Throwable ex) {
-            System.err.println("Initial SessionFactory creation failed." + ex);
-            throw new ExceptionInInitializerError(ex);
+        } catch (Exception e) {
+            System.err.println("Initial SessionFactory creation failed." + e);
+            e.printStackTrace();
         }
-    }
 
-    public static SessionFactory getSessionFactory() {
-        return sessionFactory;
-    }
-
-    public static void shutdown() {
-        getSessionFactory().close();
+        return null;
     }
 }
