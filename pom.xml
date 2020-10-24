@@ -30,6 +30,13 @@
             <version>42.2.16</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-servlet-api</artifactId>
+            <version>9.0.39</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
